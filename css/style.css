@@ -1,0 +1,209 @@
+#hamburger {
+	overflow-y: hidden;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  cursor: pointer;
+}
+
+#hamburger span,
+#hamburger span:before,
+#hamburger span:after {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 2px;
+}
+
+#hamburger span:before {
+	animation: firstline-in .6s ease-in-out forwards;
+	margin-top: -14px;
+  content: "";
+}
+
+#hamburger span {
+	animation: secondline-in .6s ease-in-out forwards;
+  top: 14px;
+}
+
+#hamburger span:after {
+	animation: thirdline-in .6s ease-in-out forwards;
+  margin-top: -14px;
+  content: "";
+}
+
+.toolbar1 #hamburger:hover span:before,
+#hamburger.active span:before {
+	animation: firstline-out .8s ease-in-out forwards;
+}
+
+
+.toolbar1 #hamburger:hover span,
+#hamburger.active span {
+	animation: secondline-out .8s ease-in-out forwards;
+}
+
+.toolbar1 #hamburger:hover span:after,
+#hamburger.active span:after  {
+	animation: thirdline-out .8s ease-in-out forwards;
+}
+
+@keyframes firstline-in{
+  0% {
+   	top: -40px;
+    transform: rotate(225deg);
+  }
+  40% {
+    top: 13px;
+    transform: rotate(15deg);
+  }
+  60% {
+    top: 18px;
+    transform: rotate(10deg);
+  }
+  100% {
+    top: 5px;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes secondline-in {
+  0% {
+  	top: 14px;
+  	transform: rotate(-45deg);	
+  }
+  40% {
+  	top: 20px;
+      	transform: rotate(-15deg);	
+  }
+  50% {
+  	top:20px;
+  	transform: rotate(-10deg);	
+  }
+    70% {
+  	top:22px;
+  	transform: rotate(-5deg);	
+  }
+  100% {
+ 		top: 14px;
+  	transform: rotate(0deg);	
+  }
+}
+
+@keyframes thirdline-in {
+  0% {
+  	top: 14px;
+  	transform: rotate(45deg);
+  }
+  40% {
+    top: 20px;
+ 	transform: rotate(15deg);
+  }
+  50% {
+    top: 20px;
+    transform: rotate(10deg);	
+  }
+    50% {
+    top: 22px;
+    transform: rotate(5deg);	
+  }
+  100% {
+    top: 23px; 
+    transform: rotate(0deg);	
+  }
+}
+
+
+@keyframes firstline-out{
+  0% {
+   	top: 5px;
+   	transform: rotate(0deg);	
+  }
+  20% {
+    top: 2px;
+    transform: rotate(12.5deg);	
+  }
+  40% {
+    top: 9px;
+    transform: rotate(25deg);	
+  }
+  60% {
+    top: 15px;
+    transform: rotate(10deg);	
+  }
+  100% {
+    top: -40px;
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes secondline-out {
+  0% {
+  	top: 14px;
+  	transform: rotate(0deg);	
+  }
+
+  40% {
+  	top: 18px;
+    transform: rotate(-25deg);	
+  }
+
+
+  60% {
+  	top:22px;
+    transform: rotate(-10deg);	
+  }
+
+  100% {
+ 		top: 14px;
+ 		left: 0px;
+    transform: rotate(-45deg);	
+  }
+}
+
+@keyframes thirdline-out {
+  0% {
+  	top: 23px;
+  	transform: rotate(0deg);
+  }
+  40% {
+  	top: 18px;
+    transform: rotate(50deg);	
+  }
+  60% {
+  	top:22px;
+    transform: rotate(20deg);	
+  }
+  
+  100% {
+    top: 14px; 
+    left: 0px;
+    transform: rotate(90deg);	
+  }
+}
+
+
+/* Not really needed, just for demo purposes */
+.toolbar {
+	background: black;
+  padding: 20px;
+  margin: 50px;
+  color: #ccc;
+  font-size: 32px;
+  font-family: arial, sans-serif;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.toolbar p,
+.toolbar div {
+  display: inline-block;
+}
+
+.toolbar p {
+  top: -5px;
+  position: relative;
+  margin-left: 10px;
+}
